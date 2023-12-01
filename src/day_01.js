@@ -36,6 +36,7 @@ const sumOfCalibrationValues = (lines, filterDigitCharsFn, mapDigitFn) =>
       .map((digitChars) => [digitChars[0], digitChars.at(-1)])
       //                                      (str) => wordToDigit.get(str) || str
       .map((firstAndLast) => firstAndLast.map(mapDigitFn))
+      // combine first and last digit into a string and convert to number
       .map((digits) => Number(digits.join("")))
   );
 
